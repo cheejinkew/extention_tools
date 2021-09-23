@@ -1,0 +1,92 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <!--<add key="sqlserverconnection" value="Server=127.0.0.1;Database=siliconvallyschool;User ID=sa;Password=sa123;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;"/>-->
+    <add key="sqlconncetionsaj" value="Server=192.168.1.72;Database=SAJ;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionsamb" value="Server=192.168.1.73;Database=SAMB;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionsabah" value="Server=192.168.1.22;Database=SABAH;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionperlis" value="Server=192.168.1.22;Database=PERLIS;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionpahang" value="Server=192.168.1.22;Database=PAHANG;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionsatu" value="Server=192.168.1.22;Database=SATU;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+	<add key="sqlconncetionmab" value="Server=192.168.1.22;Database=MALAYSIAAIRPORTS;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+	<add key="sqlconncetionAS" value="Server=192.168.1.22;Database=AIRSELANGOR;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionsains" value="Server=192.168.1.22;Database=SAINS;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+   <add key="sqlconncetionlabuan" value="Server=192.168.1.22;Database=LABUAN;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="sqlconncetionautopump" value="Server=192.168.1.72;Database=CWMS;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+   <add key="sqlconncetionskidtank" value="Server=192.168.1.107;Database=skidtank;User ID=gussbee28;Password=$mango#17;MultipleActiveResultSets=True;Max Pool Size=10000;Pooling=true;" />
+    <add key="FolderPath" value="tmp_excel" />
+    <add key="userimagepath" value="img/users" />
+    <add key="Excel03ConString" value="Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR=YES'" />
+    <add key="Excel07+ConString" value="Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR=YES'" />
+
+  </appSettings>
+   <system.web> 
+    <customErrors mode="Off" />
+    <authentication mode="Forms">
+      <forms loginUrl="~/login.aspx" timeout="2880" />
+      <!--<forms loginUrl="~/Account/Login.aspx" timeout="2880"/>-->
+    </authentication>
+    <membership>
+      <providers>
+        <clear />
+        <add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="/" />
+      </providers>
+    </membership>
+    <profile>
+      <providers>
+        <clear />
+        <add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/" />
+      </providers>
+    </profile>
+    <roleManager enabled="false">
+      <providers>
+        <clear />
+        <add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/" />
+        <add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/" />
+      </providers>
+    </roleManager>
+    <httpRuntime maxRequestLength="2000000000" executionTimeout="999999" />
+ <compilation defaultLanguage="vb" debug="true" targetFramework="4.0"> 
+      <assemblies>
+        <add assembly="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" /> 
+		<add assembly="System.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" /> 
+      		<!--<add assembly="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed"/>-->
+        <add assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="Microsoft.Build.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+      </assemblies>
+    </compilation>
+  </system.web>
+  <system.web.extensions>
+    <scripting>
+      <webServices>
+        <jsonSerialization maxJsonLength="50000000" />
+      </webServices>
+    </scripting>
+  </system.web.extensions>
+  <system.webServer>
+    <staticContent>
+      <remove fileExtension=".woff2" />
+      <mimeMap fileExtension=".woff2" mimeType="application/font-woff2" />     
+    </staticContent>
+    <defaultDocument>
+      <files>
+        <remove value="default.aspx" />
+        <add value="login.aspx" />
+      </files>
+    </defaultDocument>
+    <modules runAllManagedModulesForAllRequests="true" />
+    <handlers>
+      <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler,                 Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral,                PublicKeyToken=b03f5f7f11d50a3a"/>
+    </handlers>
+  </system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.5.0.0" newVersion="4.5.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
